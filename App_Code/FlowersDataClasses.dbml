@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="gaizigan_5" Class="FlowersDataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=sql07-8-rus.corp.parking.ru;Initial Catalog=gaizigan_5;Persist Security Info=True;User ID=gaizigan_5" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="gaizigan_5ConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.City" Member="Cities">
+    <Type Name="City">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="localizedName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="City_CityGroup" Member="CityGroups" ThisKey="id" OtherKey="city" Type="CityGroup" />
+      <Association Name="City_Store" Member="Stores" ThisKey="id" OtherKey="city" Type="Store" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CityGroup" Member="CityGroups">
+    <Type Name="CityGroup">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="city" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="groups" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="City_CityGroup" Member="City1" ThisKey="city" OtherKey="id" Type="City" IsForeignKey="true" />
+      <Association Name="Group_CityGroup" Member="Group" ThisKey="groups" OtherKey="id" Type="Group" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Groups" Member="Groups">
+    <Type Name="Group">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="localizedName" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Association Name="Group_CityGroup" Member="CityGroups" ThisKey="id" OtherKey="groups" Type="CityGroup" />
+      <Association Name="Group_Item" Member="Items" ThisKey="id" OtherKey="groups" Type="Item" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Image" Member="Images">
+    <Type Name="Image">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="fileName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="item" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Item_Image" Member="Item1" ThisKey="item" OtherKey="id" Type="Item" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Item" Member="Items">
+    <Type Name="Item">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="rating" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="price" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="groups" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="store" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ratingCount" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="article" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Item_Image" Member="Images" ThisKey="id" OtherKey="item" Type="Image" />
+      <Association Name="Item_OrderedItem" Member="OrderedItems" ThisKey="id" OtherKey="item" Type="OrderedItem" />
+      <Association Name="Group_Item" Member="Group" ThisKey="groups" OtherKey="id" Type="Group" IsForeignKey="true" />
+      <Association Name="Store_Item" Member="Store1" ThisKey="store" OtherKey="id" Type="Store" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.OrderedItem" Member="OrderedItems">
+    <Type Name="OrderedItem">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="counts" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="item" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="orders" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Item_OrderedItem" Member="Item1" ThisKey="item" OtherKey="id" Type="Item" IsForeignKey="true" />
+      <Association Name="Order_OrderedItem" Member="Order" ThisKey="orders" OtherKey="id" Type="Order" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Orders" Member="Orders">
+    <Type Name="Order">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="buyerPhone" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="destination" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="deliveringTimeTo" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="store" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="isDelivered" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="comments" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Association Name="Order_OrderedItem" Member="OrderedItems" ThisKey="id" OtherKey="orders" Type="OrderedItem" />
+      <Association Name="Store_Order" Member="Store1" ThisKey="store" OtherKey="id" Type="Store" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Store" Member="Stores">
+    <Type Name="Store">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="phone" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="address" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="name" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="city" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="deliveryCost" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Store_Item" Member="Items" ThisKey="id" OtherKey="store" Type="Item" />
+      <Association Name="Store_Order" Member="Orders" ThisKey="id" OtherKey="store" Type="Order" />
+      <Association Name="City_Store" Member="City1" ThisKey="city" OtherKey="id" Type="City" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

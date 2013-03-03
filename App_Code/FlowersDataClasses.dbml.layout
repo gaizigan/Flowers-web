@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11.25, 9.125" name="FlowersDataClasses">
+  <DataContextMoniker Name="/FlowersDataClassesDataContext" />
+  <nestedChildShapes>
+    <classShape Id="d74a464a-52ef-4eb2-97fc-9f664778ccc1" absoluteBounds="0.75, 5, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/FlowersDataClassesDataContext/City" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d3902f13-dbac-41dc-8d97-feffc421062d" absoluteBounds="0.765, 5.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b77934b5-3828-47c9-a8f5-05e1d1325e0c" absoluteBounds="3.5, 4, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/FlowersDataClassesDataContext/CityGroup" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fb2e4a82-dbed-4ef7-b9a8-abf45ca7be3e" absoluteBounds="3.515, 4.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a4633de2-c3ad-472c-b563-49f250e7275c" absoluteBounds="0.75, 2, 2, 1.3862939453125003">
+      <DataClassMoniker Name="/FlowersDataClassesDataContext/Group" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1a37081f-f837-435c-ae2d-33344578cb69" absoluteBounds="0.765, 2.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ff85497f-9c62-437c-b074-dda15c9f3792" absoluteBounds="9, 4.125, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/FlowersDataClassesDataContext/Image" />
+      <nestedChildShapes>
+        <elementListCompartment Id="26a04cec-c386-40a7-9b3d-073d111b7875" absoluteBounds="9.015, 4.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b1e1de26-1f6f-4294-b713-95e66a81d616" absoluteBounds="6.25, 3.625, 2, 2.347801106770834">
+      <DataClassMoniker Name="/FlowersDataClassesDataContext/Item" />
+      <nestedChildShapes>
+        <elementListCompartment Id="73dfd899-28bc-4cbd-ba76-eba3638c9d08" absoluteBounds="6.265, 4.085, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="56e1c6a8-dc69-4099-a770-e7dcd62fd329" absoluteBounds="9, 6.5, 2, 1.5785953776041675">
+      <DataClassMoniker Name="/FlowersDataClassesDataContext/OrderedItem" />
+      <nestedChildShapes>
+        <elementListCompartment Id="88d7d5b1-3c33-492f-8a9c-9c543af44238" absoluteBounds="9.015, 6.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="97084c9a-d307-4390-bbbf-d1fc3ab294fa" absoluteBounds="6.25, 6.75, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/FlowersDataClassesDataContext/Order" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8862d42d-62cf-4726-85b3-c1f66733f22a" absoluteBounds="6.265, 7.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="231d5471-a140-4675-8bcf-c0e9f0c359f1" absoluteBounds="3.5, 6.75, 2, 1.9631982421874996">
+      <DataClassMoniker Name="/FlowersDataClassesDataContext/Store" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ec2bb497-3464-4f96-a504-1b16441677d5" absoluteBounds="3.515, 7.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 5.19314697265625); (3.5 : 5.19314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/FlowersDataClassesDataContext/City/City_CityGroup" />
+      <nodes>
+        <classShapeMoniker Id="d74a464a-52ef-4eb2-97fc-9f664778ccc1" />
+        <classShapeMoniker Id="b77934b5-3828-47c9-a8f5-05e1d1325e0c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 2.69314697265625); (4.5 : 2.69314697265625); (4.5 : 4)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/FlowersDataClassesDataContext/Group/Group_CityGroup" />
+      <nodes>
+        <classShapeMoniker Id="a4633de2-c3ad-472c-b563-49f250e7275c" />
+        <classShapeMoniker Id="b77934b5-3828-47c9-a8f5-05e1d1325e0c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 4.81814697265625); (9 : 4.81814697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/FlowersDataClassesDataContext/Item/Item_Image" />
+      <nodes>
+        <classShapeMoniker Id="b1e1de26-1f6f-4294-b713-95e66a81d616" />
+        <classShapeMoniker Id="ff85497f-9c62-437c-b074-dda15c9f3792" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 3.07097295898438); (4.41666666666667 : 3.07097295898437 : JumpStart); (4.58333333333333 : 3.07097295898438 : JumpEnd); (7.25 : 3.07097295898438); (7.25 : 3.625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/FlowersDataClassesDataContext/Group/Group_Item" />
+      <nodes>
+        <classShapeMoniker Id="a4633de2-c3ad-472c-b563-49f250e7275c" />
+        <classShapeMoniker Id="b1e1de26-1f6f-4294-b713-95e66a81d616" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 5.97280110677083); (8.625 : 6.34780110677083); (8.625 : 6.125); (9 : 6.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/FlowersDataClassesDataContext/Item/Item_OrderedItem" />
+      <nodes>
+        <classShapeMoniker Id="b1e1de26-1f6f-4294-b713-95e66a81d616" />
+        <classShapeMoniker Id="56e1c6a8-dc69-4099-a770-e7dcd62fd329" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 7.41429768880208); (9 : 7.41429768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/FlowersDataClassesDataContext/Order/Order_OrderedItem" />
+      <nodes>
+        <classShapeMoniker Id="97084c9a-d307-4390-bbbf-d1fc3ab294fa" />
+        <classShapeMoniker Id="56e1c6a8-dc69-4099-a770-e7dcd62fd329" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 6.75); (5.875 : 6.375); (5.875 : 4.79890055338542); (6.25 : 4.79890055338542)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/FlowersDataClassesDataContext/Store/Store_Item" />
+      <nodes>
+        <classShapeMoniker Id="231d5471-a140-4675-8bcf-c0e9f0c359f1" />
+        <classShapeMoniker Id="b1e1de26-1f6f-4294-b713-95e66a81d616" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 7.76285162109375); (6.25 : 7.76285162109375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/FlowersDataClassesDataContext/Store/Store_Order" />
+      <nodes>
+        <classShapeMoniker Id="231d5471-a140-4675-8bcf-c0e9f0c359f1" />
+        <classShapeMoniker Id="97084c9a-d307-4390-bbbf-d1fc3ab294fa" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.75 : 6.3862939453125); (1.75 : 7.73159912109375); (3.5 : 7.73159912109375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/FlowersDataClassesDataContext/City/City_Store" />
+      <nodes>
+        <classShapeMoniker Id="d74a464a-52ef-4eb2-97fc-9f664778ccc1" />
+        <classShapeMoniker Id="231d5471-a140-4675-8bcf-c0e9f0c359f1" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
