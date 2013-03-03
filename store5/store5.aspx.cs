@@ -59,8 +59,12 @@ public partial class store5_store5 : System.Web.UI.Page
     {
         
         string strQRY = "";
-        strQRY = "SELECT * FROM OrderedItem WHERE orders = " + strCustometId + strSort;
-        
+       // strQRY = "SELECT * FROM OrderedItem WHERE orders = " + strCustometId + strSort;
+        strQRY = "SELECT OrderedItem.orders, OrderedItem.item, Item.name, OrderedItem.counts FROM OrderedItem  INNER JOIN Item ON OrderedItem.orders = " + strCustometId + "AND OrderedItem.item = Item.id" + strSort;
+        //SELECT OrderedItem.orders, Item.name, OrderedItem.counts, Orders.buyerPhone, Orders.destination, Orders.deliveringTimeTo, Orders.isDelivered, Orders.comments 
+        //  FROM OrderedItem
+        //  INNER JOIN Orders ON OrderedItem.orders = Orders.id 
+        //  INNER JOIN Item ON OrderedItem.item = Item.id WHERE (Orders.store = @storeID) 
         SqlDataSource sqlDataSource = new SqlDataSource();
         sqlDataSource.ConnectionString = ConfigurationManager.ConnectionStrings["gaizigan_5ConnectionString"].ConnectionString;
    

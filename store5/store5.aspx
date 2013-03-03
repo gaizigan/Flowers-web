@@ -119,7 +119,7 @@
                                 <div id="div<%# Eval("id") %>" style="display:none;position:relative;left:9px; OVERFLOW: auto;WIDTH:100%" >
 
                                     <asp:GridView ID="GridView2" AllowPaging="True" AllowSorting="false" BackColor="White" Font-Size=Small
-                                        AutoGenerateColumns=false Font-Names="Verdana" runat="server" DataKeyNames="id" ShowFooter=false
+                                        AutoGenerateColumns=false Font-Names="Verdana" runat="server" ShowFooter=false
                                         OnPageIndexChanging="GridView2_PageIndexChanging" GridLines="Horizontal, Vertical"                                                                     
                                         BorderStyle=Double BorderColor="#0083C1">
                                         <RowStyle BackColor="Gainsboro" />
@@ -131,7 +131,7 @@
                                                 <ItemTemplate><%# Eval("item")%></ItemTemplate>
                                             </asp:TemplateField>
                                             <asp:TemplateField HeaderText="Имя" SortExpression="Freight">
-                                                <ItemTemplate><%# Eval("item[id].name")%></ItemTemplate>
+                                                <ItemTemplate><%# Eval("name")%></ItemTemplate>
                                             </asp:TemplateField>
                                             <asp:TemplateField HeaderText="Количество" SortExpression="Freight">
                                                 <ItemTemplate><%# Eval("counts")%></ItemTemplate>
