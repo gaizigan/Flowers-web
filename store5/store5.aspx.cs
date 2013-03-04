@@ -19,8 +19,20 @@ public partial class store5_store5 : System.Web.UI.Page
 
     protected void chkLinked_CheckedChanged(Object sender, EventArgs args)
     {
-        int sd = 5;
-        sd++;
+        System.Diagnostics.Debug.WriteLine("SomeText");
+        // get the checkbox reference
+        CheckBox chk = (CheckBox)sender;
+        // get the GridViewRow reference
+        GridViewRow row = (GridViewRow)chk.NamingContainer;
+        // assuming the primary key value is stored in a hiddenfield with ID="HiddenID"
+        Label hiddenID = (Label)row.FindControl("lblid");
+
+        string sql = "UPDATE Orders SET isDelivered = " + (chk.Checked == true ? "1" : "0") + " WHERE id = " + hiddenID.Text;
+
+        SqlDataSource sqlDataSource = new SqlDataSource();
+        sqlDataSource.ConnectionString = ConfigurationManager.ConnectionStrings["gaizigan_5ConnectionString"].ConnectionString;
+        sqlDataSource.UpdateCommand = sql;
+        sqlDataSource.Update();
     }
 
     #region Variables

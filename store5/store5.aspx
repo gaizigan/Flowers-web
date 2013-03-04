@@ -90,15 +90,15 @@
                         <asp:TextBox ID="txtContactTitle" Text='' runat="server"></asp:TextBox>
                     </FooterTemplate>
                 </asp:TemplateField>
-                <asp:TemplateField HeaderText="Доставлено" SortExpression="ContactTitle">
-                    <ItemTemplate><%# Eval("isDelivered")%></ItemTemplate>
-                    <EditItemTemplate>
-                        <asp:TextBox ID="txtContactTitle" Text='<%# Eval("isDelivered") %>' runat="server"></asp:TextBox>
-                    </EditItemTemplate>
-                    <FooterTemplate>
-                        <asp:TextBox ID="txtContactTitle" Text='' runat="server"></asp:TextBox>
-                    </FooterTemplate>
+
+                <asp:TemplateField HeaderText="Доставлено" SortExpression="isDelivered">
+                    <ItemTemplate>
+                        <asp:CheckBox ID="chkLinked" runat="server"
+                            Checked='<%#  Eval("isDelivered") == DBNull.Value ? false : Convert.ToBoolean(Eval("isDelivered")) %>'
+                            OnCheckedChanged="chkLinked_CheckedChanged" AutoPostback="true"  />
+                    </ItemTemplate>
                 </asp:TemplateField>
+                
                 <asp:TemplateField HeaderText="Комментарии" SortExpression="ContactTitle">
                     <ItemTemplate><%# Eval("comments")%></ItemTemplate>
                     <EditItemTemplate>
