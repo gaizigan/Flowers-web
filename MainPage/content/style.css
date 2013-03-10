@@ -212,6 +212,7 @@ input:-moz-placeholder {
 /* line 129, ../scss/style.scss */
 #content-wrapper #content-body {
   width: 940px;
+  height: 720px;
   margin: 0 auto;
   padding: 0 30px;
 }
@@ -377,31 +378,22 @@ input:-moz-placeholder {
 /* line 273, ../scss/style.scss */
 .device {
   float: left;
-  width: 425px;
-  height: 730px;
+  width: 530px;
+  height: 700px;
   margin-top: -33px;
   position: relative;
 }
-/* line 279, ../scss/style.scss */
-.device .iglare {
-  width: 133px;
-  height: 366px;
-  background: url(../images/glare.png) no-repeat top;
-  position: absolute;
-  z-index: 99;
-  top: 34px;
-  right: 46px;
-}
+
 /* line 288, ../scss/style.scss */
 .device .iphone {
-  width: 425px;
-  height: 729px;
-  background: url(../images/iphone.png) no-repeat top;
+  width: 530px;
+  height: 700px;
+  background: url(../images/iphone-hand.png) no-repeat top;
 }
 /* line 292, ../scss/style.scss */
 .device .iphone img {
-  top: 35px !important;
-  left: 58px !important;
+  top: 77px !important;
+  left: 210px !important;
 }
 /* line 297, ../scss/style.scss */
 .device #slidenav {
@@ -421,10 +413,6 @@ input:-moz-placeholder {
   margin: 0 5px;
   content: none;
   background: url(../images/bullits.png) no-repeat bottom;
-}
-/* line 313, ../scss/style.scss */
-.device #slidenav a.activeSlide {
-  background: url(../images/bullits.png) no-repeat top;
 }
 /* line 317, ../scss/style.scss */
 .device .coming-soon {
@@ -475,7 +463,7 @@ input:-moz-placeholder {
 .share-links {
   position: relative;
   height: 52px;
-  margin-top: -29px;
+  margin-top: 0px;
 }
 /* line 358, ../scss/style.scss */
 .share-links .social {
